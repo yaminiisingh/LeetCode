@@ -1,4 +1,4 @@
-//Approach 1
+//Approach 1 : Character mapping with dictionaries
 
 class Solution {
     public boolean isIsomorphic(String s, String t) {
