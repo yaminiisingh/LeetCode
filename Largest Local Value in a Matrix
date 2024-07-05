@@ -1,0 +1,24 @@
+public class Solution {
+    public int[][] LargestLocal(int[][] grid) {
+        int n = grid.Length;
+        int [][] newGrid = new int[n-2][];
+
+        for(int i=0 ;i<n-2; i++){
+            newGrid[i] = new int[n-2];
+            for(int j = 0; j< n-2; j++){
+                newGrid[i][j]= FindMaxInSub(grid, i, j);
+            }
+        }
+        return newGrid;
+    }
+
+    public int FindMaxInSub(int[][] grid, int row, int col){
+        int max= int.MinValue;
+        for(int i=row; i< row+3; i++){
+            for(int j=col; j<col+3; j++){
+                max= Math.Max(max, grid[i][j]);
+            }
+        }
+        return max;
+    }
+}
