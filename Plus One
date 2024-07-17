@@ -1,0 +1,17 @@
+//convoluted way 
+
+public class Solution {
+    public int[] PlusOne(int[] digits) {
+       StringBuilder s = new StringBuilder(digits.Length);
+       foreach(int i in digits){
+          s.Append(i);
+       }
+       BigInteger newNumber = BigInteger.Parse(s.ToString()) + 1;
+       string newString= newNumber.ToString();
+       int[] result= new int[newString.Length];
+       for(int i=0; i<newString.Length; i++){
+          result[i]= Int32.Parse(newString[i].ToString());
+       }
+       return result;
+    }
+}
